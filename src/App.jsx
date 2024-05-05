@@ -9,11 +9,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" element={<DefaultLayout />} />
-          <Route path="/contact-us" element={<ContactUs />} />
-          <Route path="/about-us" element={<AboutUs />} />
-        </Route>
+        {/* <Route element={<Layout />} /> */}
+        <Route path="/" element={<DefaultLayout />} />
+        <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/about-us" element={<AboutUs />} />
       </Routes>
     </BrowserRouter>
   );
