@@ -1,4 +1,4 @@
-import Banner from "../../assets/banner.png";
+import Banner from "../../assets/evermarkbg.jpg";
 import { Link, useNavigate } from "react-router-dom";
 import Logo2x from "../../assets/logoem.png";
 import { useState } from "react";
@@ -7,7 +7,7 @@ const ContactUs = () => {
   const [menuOpen, setmenuOpen] = useState(false);
   const navigate = useNavigate();
   return (
-    <div className="relative bg-white text-white h-screen">
+    <div className="relative bg-white text-white">
       <img
         src={Banner}
         alt="Background image of skyscrapers"
@@ -27,24 +27,27 @@ const ContactUs = () => {
           />
           <nav className="hidden lg:block">
             <div className="flex gap-20 items-center">
-              <Link to={""} className="text-white no-underline">
+              <Link to={"/about-us"} className="text-white no-underline">
                 About Us
               </Link>
-              <Link to={""} className="text-white no-underline">
+              {/* <Link to={""} className="text-white no-underline">
                 Projects
-              </Link>
-              <Link to={"/contact-us"} className="text-white no-underline">
+              </Link> */}
+              {/* <Link to={"/contact-us"} className="text-white no-underline">
                 contact Us
-              </Link>
-              <button className="bg-[#325131] text-white px-4 py-3 border-none rounded-lg">
-                Register Now
+              </Link> */}
+              <button
+                onClick={() => navigate("/contact-us")}
+                className="bg-[#325131] text-white px-4 py-3 border-none rounded-lg"
+              >
+                contact Us
               </button>
             </div>
           </nav>
           <div className="lg:hidden flex items-center gap-5">
-            <button className="bg-[#325131] text-white px-4 py-3 border-none rounded-xl">
+            {/* <button className="bg-[#325131] text-white px-4 py-3 border-none rounded-xl">
               Register Now
-            </button>
+            </button> */}
             <div className="relative">
               {menuOpen ? (
                 <svg
@@ -57,8 +60,8 @@ const ContactUs = () => {
                   className="w-6 h-6"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     d="M6 18 18 6M6 6l12 12"
                   />
                 </svg>
@@ -81,21 +84,27 @@ const ContactUs = () => {
               )}
               {menuOpen && (
                 <div className="flex flex-col absolute w-[150px] gap-1 right-0 top-10">
-                  <Link to={""} className="text-white no-underline">
+                  <Link
+                    to={"/about-us"}
+                    className="text-white no-underline text-center text-[15px]"
+                  >
                     About Us
                   </Link>
-                  <Link to={""} className="text-white no-underline">
+                  {/* <Link to={""} className="text-white no-underline">
                     Projects
-                  </Link>
-                  <Link to={""} className="text-white no-underline">
+                  </Link> */}
+                  <button
+                    onClick={() => navigate("/contact-us")}
+                    className="bg-[#325131] text-white px-4 py-3 border-none rounded-lg"
+                  >
                     contact Us
-                  </Link>
+                  </button>
                 </div>
               )}
             </div>
           </div>
         </header>
-        <div className="flex flex-col items-center mx-10 mt-10 lg:mt-0">
+        <div className="flex flex-col items-center mx-10 mt-10 lg:mt-0 mb-20">
           <h1 className="text-3xl font-bold text-center mb-8 text-white">
             Contact Us
           </h1>

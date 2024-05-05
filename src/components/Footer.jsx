@@ -8,31 +8,36 @@ import twitter from "../assets/twitter.svg";
 import youtube from "../assets/youtube.svg";
 import linkedin from "../assets/linkedin.svg";
 import whatsapp from "../assets/whatsapp.svg";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Footer = () => {
+  const { pathname } = useLocation();
   return (
     <>
       <div className="relative">
-        <div className="mx-2 lg:w-full -top-28 bottom-0 right-0 left-0 p-6 bg-white rounded-md shadow-2xl lg:max-w-[800px] flex flex-col justify-center absolute lg:mx-auto items-center h-[200px]">
-          <h2 className="text-[30px] lg:text-[40px] font-semibold text-center text-zinc-800 mb-6">
-            Subscribe Our Newsletter
-          </h2>
-          <div className="flex justify-between bg-[#325131] max-w-[300px] lg:max-w-[450px] items-center shadow-xl px-2 xl:px-3 py-3  rounded-lg  xl:w-full ">
-            <div className="flex">
-              <input
-                type="text"
-                placeholder="Enter Your Email Address"
-                className="bg-transparent pl-2  outline-none border-none text-black placeholder-white"
-              />
+        {pathname == "/" && (
+          <div className="mx-2 lg:w-full -top-28 bottom-0 right-0 left-0 p-6 bg-white rounded-md shadow-2xl lg:max-w-[800px] flex flex-col justify-center absolute lg:mx-auto items-center h-[200px]">
+            <h2 className="text-[30px] lg:text-[40px] font-semibold text-center text-zinc-800 mb-6">
+              Subscribe Our Newsletter
+            </h2>
+            <div className="flex justify-between bg-[#325131] max-w-[300px] lg:max-w-[450px] items-center shadow-xl px-2 xl:px-3 py-3  rounded-lg  xl:w-full ">
+              <div className="flex">
+                <input
+                  type="text"
+                  placeholder="Enter Your Email Address"
+                  className="bg-transparent pl-2  outline-none border-none text-black placeholder-white"
+                />
+              </div>
+              <button className="bg-white text-black px-4 py-3 border-none rounded-lg">
+                Subscribe Now
+              </button>
             </div>
-            <button className="bg-white text-black px-4 py-3 border-none rounded-lg">
-              Search Now
-            </button>
           </div>
-        </div>
+        )}
 
-        <div className="bg-[#325131] h-full pt-32 ">
+        <div
+          className={`bg-[#325131] h-full ${pathname == "/" ? "pt-32" : ""} `}
+        >
           <div className="flex flex-wrap items-center">
             <div className="container flex flex-col xl:flex-row items-center xl:flex justify-between">
               <div className="mt-14">
@@ -107,8 +112,14 @@ const Footer = () => {
                   <p className=" flex items-start gap-5">
                     <img src={Location} alt="Location" />
                     <span>
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry.
+                      <a
+                        className="text-current no-underline"
+                        href="https://maps.app.goo.gl/njSkT9zFM5LsV7Vw9"
+                        target="_blank"
+                      >
+                        EVERMARK 445, Opp Shahjanand S+, nr. Siddharth's School,
+                        Vavol, Gandhinagar, Gujarat 382016
+                      </a>
                     </span>
                   </p>
                   <p className="mt-4 flex items-start gap-5">
@@ -120,7 +131,15 @@ const Footer = () => {
                   </p>
                   <p className="mt-4 flex items-start gap-5 w-full">
                     <img src={Email} alt="Email" className="" />
-                    <span className="font-bold">info@evermark.com</span>{" "}
+                    <span className="font-bold">
+                      <a
+                        className="text-current no-underline"
+                        href="mailto:yp87844@gmail.com"
+                        target="_blank"
+                      >
+                        info@evermark.com
+                      </a>
+                    </span>{" "}
                   </p>
                 </div>
               </div>
@@ -132,12 +151,27 @@ const Footer = () => {
               Copyrights © 2024 Evermark Group All Rights Reserved.
             </p>
             <div className="flex gap-2 w-full justify-center md:justify-end">
-              <img src={facebook} alt="facebook" className="w-6" />
-              <img src={instagram} alt="instagram" className="w-6" />
-              <img src={twitter} alt="twitter" className="w-6" />
-              <img src={youtube} alt="youtube" className="w-6" />
-              <img src={linkedin} alt="linkedin" className="w-6" />
-              <img src={whatsapp} alt="whatsapp" className="w-6" />
+              {/* <a href="" target="_blank">
+                <img src={facebook} alt="facebook" className="w-6" />
+              </a> */}
+              <a
+                href="https://www.instagram.com/evermark_?igsh=MTB5ZGY3ZWxwNDdldw=="
+                target="_blank"
+              >
+                <img src={instagram} alt="instagram" className="w-6" />
+              </a>{" "}
+              {/* <a href="" target="_blank">
+                <img src={twitter} alt="twitter" className="w-6" />
+              </a> */}
+              <a href="https://www.youtube.com/@EverMark-li7dy" target="_blank">
+                <img src={youtube} alt="youtube" className="w-6" />
+              </a>
+              {/* <a href="" target="_blank">
+                <img src={linkedin} alt="linkedin" className="w-6" />
+              </a> */}
+              <a href="" target="_blank">
+                <img src={whatsapp} alt="whatsapp" className="w-6" />
+              </a>
             </div>
           </div>
         </div>

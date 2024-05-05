@@ -2,7 +2,7 @@ import mission from "../assets/mission.png";
 
 const OurMission = () => {
   return (
-    <div className="container flex flex-col items-center md:flex-row gap-5 justify-evenly w-full ">
+    <div className="container flex flex-col items-center md:flex-row gap-5 justify-evenly w-full my-20">
       <div className="px-10">
         <img
           src={mission}

@@ -9,7 +9,11 @@ const ProjectCard = ({ ProjectImage }) => {
   return (
     <div className="shadow-lg w-fit px-2 py-2 rounded-md">
       <div>
-        <img src={ProjectImage} alt="Project Image" className="max-w-[300px]" />
+        <img
+          src={ProjectImage}
+          alt="Project Image"
+          className="max-w-[300px] rounded-md"
+        />
       </div>
       <div className="flex items-center">
         <img src={Bath} alt="Bath" />
