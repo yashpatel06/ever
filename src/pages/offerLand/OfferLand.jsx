@@ -76,6 +76,8 @@ const OfferLand = () => {
       },
     });
 
+  console.log("hello");
+
   return (
     <>
       <div className="relative bg-white text-white">
