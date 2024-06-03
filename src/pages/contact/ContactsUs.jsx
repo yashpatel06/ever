@@ -1,12 +1,56 @@
+import { useFormik } from "formik";
 import Banner from "../../assets/evermarkbg.jpg";
-import { Link, useNavigate } from "react-router-dom";
-import Logo2x from "../../assets/logoem.png";
-import { useState } from "react";
 import Footer from "../../components/Footer";
+import Header from "../../components/Header";
+import ScrollToTop from "../../hook/ScrollTop";
+import { TextField } from "@mui/material";
+import { Textarea } from "@mui/joy";
+import emailjs from "@emailjs/browser";
 
 const ContactUs = () => {
-  const [menuOpen, setmenuOpen] = useState(false);
-  const navigate = useNavigate();
+  const { values, handleChange, handleSubmit, resetForm } = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      phone: "",
+      subject: "",
+      message: "",
+    },
+    onSubmit: (value) => {
+      console.log(value, "CONTACTUS");
+      const form = document.createElement("form");
+
+      // Append form fields with values from Formik
+      Object.keys(values).forEach((key) => {
+        const input = document.createElement("input");
+        input.type = "hidden";
+        input.name = key;
+        input.value = values[key];
+        form.appendChild(input);
+      });
+
+      // Append the form to the document body
+      document.body.appendChild(form);
+      emailjs
+        .sendForm(
+          "service_b82sbzf",
+          "template_l18nt5i",
+          form,
+          "Y4GJZaIiIA2Jw2efq"
+        )
+        .then(
+          () => {
+            console.log("SUCCESS!");
+            resetForm();
+          },
+          (error) => {
+            console.log("FAILED...", error.text);
+            resetForm();
+          }
+        );
+    },
+  });
+
   return (
     <>
       <div className="relative bg-white text-white">
@@ -20,153 +64,160 @@ const ContactUs = () => {
           // }}
         />
         <div className="relative mx-auto px-6 py-1 xl:ml-10">
-          <header className="flex justify-between items-center">
-            <img
-              src={Logo2x}
-              alt="logo"
-              className="w-20 xl:w-24 2xl:w-40 cursor-pointer"
-              onClick={() => navigate("/")}
-            />
-            <nav className="hidden lg:block">
-              <div className="flex gap-20 items-center">
-                <Link to={"/about-us"} className="text-white no-underline">
-                  About Us
-                </Link>
-                {/* <Link to={""} className="text-white no-underline">
-                Projects
-              </Link> */}
-                {/* <Link to={"/contact-us"} className="text-white no-underline">
-                contact Us
-              </Link> */}
-                <button
-                  onClick={() => navigate("/contact-us")}
-                  className="bg-[#325131] text-white px-4 py-3 border-none rounded-lg"
-                >
-                  contact Us
-                </button>
-              </div>
-            </nav>
-            <div className="lg:hidden flex items-center gap-5">
-              {/* <button className="bg-[#325131] text-white px-4 py-3 border-none rounded-xl">
-              Register Now
-            </button> */}
-              <div className="relative">
-                {menuOpen ? (
-                  <svg
-                    onClick={() => setmenuOpen(!menuOpen)}
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-6 h-6"
+          <Header />
+
+          <div className="bg-[#325131] shadow-md rounded-lg overflow-hidden my-10">
+            <div className="p-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="max-w-full">
+                  <h2 className="text-2xl font-semibold mb-4">Get in Touch</h2>
+
+                  <form
+                    className="flex flex-col gap-5 md:gap-2 bg-white p-10 rounded-lg"
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                      handleSubmit(e);
+                    }}
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M6 18 18 6M6 6l12 12"
+                    <div className="flex flex-col md:flex-row gap-5">
+                      <TextField
+                        label="Name"
+                        type="text"
+                        name="name"
+                        value={values?.name}
+                        onChange={handleChange}
+                        className="p-3 border-0 rounded-md md:w-full bg-white"
+                        sx={{
+                          "& .Mui-focused": {
+                            color: "#6386AD",
+                            backgroundColor: "white",
+                            // input: { color: "red" },
+                          },
+                          backgroundColor: "#F6F6F6",
+                          outline: "none",
+                          color: "#6386ad",
+                          borderRadius: "8px",
+                          borderColor: "#325131",
+                          border: "none",
+                          maxWidth: "370px",
+                        }}
+                      />
+
+                      <TextField
+                        type="email"
+                        placeholder="Email"
+                        name="email"
+                        label="email"
+                        value={values?.email}
+                        onChange={handleChange}
+                        className="p-3 border-0 rounded-md md:w-full bg-white"
+                        sx={{
+                          "& .Mui-focused": {
+                            color: "#6386AD",
+                            backgroundColor: "white",
+                            // input: { color: "red" },
+                          },
+                          backgroundColor: "#F6F6F6",
+                          outline: "none",
+                          color: "#6386ad",
+                          borderRadius: "8px",
+                          borderColor: "#325131",
+                          border: "none",
+                          maxWidth: "370px",
+                        }}
+                      />
+                    </div>
+                    <div className="flex flex-col md:flex-row gap-5 max-md:w-full ">
+                      <TextField
+                        type="text"
+                        placeholder="Phone"
+                        label="contact no"
+                        name="phone"
+                        value={values?.phone}
+                        onChange={handleChange}
+                        className="p-3 border-0 rounded-md md:w-full bg-white"
+                        sx={{
+                          "& .Mui-focused": {
+                            color: "#6386AD",
+                            backgroundColor: "white",
+                            // input: { color: "red" },
+                          },
+                          backgroundColor: "#F6F6F6",
+                          outline: "none",
+                          color: "#6386ad",
+                          borderRadius: "8px",
+                          borderColor: "#325131",
+                          border: "none",
+                          maxWidth: "370px",
+                        }}
+                      />
+                      <TextField
+                        type="text"
+                        name="subject"
+                        value={values?.subject}
+                        label="subject"
+                        onChange={handleChange}
+                        placeholder="Subject"
+                        className="p-3 border-0 rounded-md md:w-full bg-white"
+                        sx={{
+                          "& .Mui-focused": {
+                            color: "#6386AD",
+                            backgroundColor: "white",
+                            // input: { color: "red" },
+                          },
+                          backgroundColor: "#F6F6F6",
+                          outline: "none",
+                          color: "#6386ad",
+                          borderRadius: "8px",
+                          borderColor: "#325131",
+                          border: "none",
+                          maxWidth: "370px",
+                        }}
+                      />
+                    </div>
+                    <Textarea
+                      minRows={3}
+                      label="Your Message"
+                      placeholder="Your Message"
+                      onChange={handleChange}
+                      name="message"
+                      value={values?.message}
+                      className="p-3 border-0 rounded-md max-w-full mb-4 h-32"
                     />
-                  </svg>
-                ) : (
-                  <svg
-                    onClick={() => setmenuOpen(!menuOpen)}
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-6 h-6"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
-                    />
-                  </svg>
-                )}
-                {menuOpen && (
-                  <div className="flex flex-col absolute w-[150px] gap-1 right-0 top-10">
-                    <Link
-                      to={"/about-us"}
-                      className="text-white no-underline text-center text-[15px]"
-                    >
-                      About Us
-                    </Link>
-                    {/* <Link to={""} className="text-white no-underline">
-                    Projects
-                  </Link> */}
                     <button
-                      onClick={() => navigate("/contact-us")}
-                      className="bg-[#325131] text-white px-4 py-3 border-none rounded-lg"
+                      type="submit"
+                      className="bg-[#325131] text-white font-semibold py-3 px-6 rounded-md border-0 shadow-none cursor-pointer "
                     >
-                      contact Us
+                      Send Message
                     </button>
+                  </form>
+                </div>
+                <div>
+                  <h2 className="text-2xl font-semibold mb-4">Contact Us</h2>
+
+                  <div className="mb-4">
+                    <h3 className="font-semibold text-[#D7DE96]">Address</h3>
+                    <p className="text-[16px]">
+                      E-166, 2nd Floor, Electronic Estate, Sector 26 G.I.D.C.
+                      Gandhinagar. GUJARAT 382028 INDIA
+                    </p>
                   </div>
-                )}
+                  <div className="mb-4">
+                    <h3 className="font-semibold text-[#D7DE96]">Phone</h3>
+                    <p className="text-[16px]">00 91 90999 43000</p>
+                  </div>
+                  <div className="mb-4">
+                    <h3 className="font-semibold text-[#D7DE96]">E-mail</h3>
+                    <p className="text-[16px]">evermarkinfra@gmail.com</p>
+                  </div>
+                </div>
               </div>
-            </div>
-          </header>
-          <div className="flex flex-col items-center mx-10 mt-10 lg:mt-0 mb-20">
-            <h1 className="text-3xl font-bold text-center mb-8 text-white">
-              Contact Us
-            </h1>
-            <div className="bg-white dark:bg-white p-6 rounded-lg shadow-md w-full md:w-1/2 py-10">
-              <form className="space-y-4 mx-5">
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium text-black"
-                  >
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    className="mt-1 block w-full border-zinc-300 dark:border-zinc-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm px-2 py-2"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-black "
-                  >
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    className="mt-1 block w-full border-zinc-300 dark:border-zinc-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm px-2 py-2"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-medium text-black"
-                  >
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows="4"
-                    className="mt-1 block w-full max-w-full border-zinc-300 dark:border-zinc-600 rounded-md shadow-sm  sm:text-sm"
-                  ></textarea>
-                </div>
-                <button
-                  onClick={(e) => e.preventDefault()}
-                  type="submit"
-                  className="bg-[#325131] text-white px-4 py-3 border-none rounded-lg cursor-pointer"
-                >
-                  Submit
-                </button>
-              </form>
             </div>
           </div>
         </div>
       </div>
       <Footer />
+      <ScrollToTop />
     </>
   );
 };
