@@ -76,7 +76,7 @@ const OfferLand = () => {
       },
     });
 
-  // console.log("hello");
+  console.log("hello");
 
   return (
     <>
