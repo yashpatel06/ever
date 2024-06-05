@@ -155,7 +155,7 @@ const OfferLand = () => {
                     </div>
 
                     <div className="flex flex-col  gap-5 max-md:w-full ">
-                      <div className="flex gap-2">
+                      <div className="flex flex-col gap-5 md:flex md:gap-2">
                         <Autocomplete
                           name="phoneCode"
                           onChange={(e, newvalue) => {
@@ -166,7 +166,7 @@ const OfferLand = () => {
                           }}
                           value={values?.phoneCode?.phone}
                           id="country-select-demo"
-                          sx={{ width: 300 }}
+                          // sx={{ width: 300 }}
                           options={countries}
                           autoHighlight
                           getOptionLabel={() =>

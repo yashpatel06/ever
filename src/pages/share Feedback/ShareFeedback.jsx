@@ -86,7 +86,7 @@ const ShareFeedback = () => {
                           //   maxWidth: "370px",
                         }}
                       />
-                      <div className="flex flex-col md:flex-row gap-2">
+                      <div className="flex flex-col gap-5 md:flex-row md:gap-2">
                         <Autocomplete
                           name="phoneCode"
                           onChange={(e, newvalue) => {
@@ -97,7 +97,7 @@ const ShareFeedback = () => {
                           }}
                           value={values?.phoneCode?.phone}
                           id="country-select-demo"
-                          sx={{ width: 300 }}
+                          // sx={{ width: 300 }}
                           options={countries}
                           autoHighlight
                           getOptionLabel={() =>
