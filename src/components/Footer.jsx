@@ -1,12 +1,13 @@
+/* eslint-disable react/no-unescaped-entities */
 import Logo2x from "../assets/logo2x.png";
 import Email from "../assets/email.png";
 import Location from "../assets/Black.png";
 import Call from "../assets/Vector.png";
-import facebook from "../assets/facebook.svg";
+// import facebook from "../assets/facebook.svg";
 import instagram from "../assets/instagram.svg";
-import twitter from "../assets/twitter.svg";
+// import twitter from "../assets/twitter.svg";
 import youtube from "../assets/youtube.svg";
-import linkedin from "../assets/linkedin.svg";
+// import linkedin from "../assets/linkedin.svg";
 import whatsapp from "../assets/whatsapp.svg";
 import { Link, useLocation } from "react-router-dom";
 
@@ -20,15 +21,15 @@ const Footer = () => {
             <h2 className="text-[30px] lg:text-[40px] font-semibold text-center text-zinc-800 mb-6">
               Subscribe Our Newsletter
             </h2>
-            <div className="flex justify-between bg-[#325131] max-w-[300px] lg:max-w-[450px] items-center shadow-xl px-2 xl:px-3 py-3  rounded-lg  xl:w-full ">
+            <div className="flex flex-col justify-center sm:flex-row sm:justify-between bg-[#325131] max-w-[300px] sm:max-w-[450px] items-center shadow-xl px-2 xl:px-3 py-3 rounded-lg xl:w-full ">
               <div className="flex">
                 <input
                   type="text"
                   placeholder="Enter Your Email Address"
-                  className="bg-transparent pl-2  outline-none border-none text-black placeholder-white"
+                  className="bg-transparent pl-2  outline-none border-none placeholder-white text-white"
                 />
               </div>
-              <button className="bg-white text-black px-4 py-3 border-none rounded-lg">
+              <button className="bg-white text-black mt-2 md:mt-0 px-4 py-3 border-none rounded-lg w-full">
                 Subscribe Now
               </button>
             </div>
@@ -39,7 +40,7 @@ const Footer = () => {
           className={`bg-[#325131] h-full ${pathname == "/" ? "pt-32" : ""} `}
         >
           <div className="flex flex-wrap items-center">
-            <div className="container flex flex-col xl:flex-row items-center xl:flex justify-between">
+            <div className="container  flex flex-col xl:flex-row items-center xl:flex justify-between">
               <div className="mt-14">
                 <img src={Logo2x} alt="Logo2x" />
               </div>
@@ -106,10 +107,10 @@ const Footer = () => {
                   </div>
                 </div>
                 <div className="flex flex-col max-w-[300px] w-full lg:max-w-[350px] text-left justify-center md:mt-[110px] lg:mt-[70px]">
-                  <h3 className="font-semibold text-xl mb-4 text-[#D7DE96]">
+                  <h3 className="font-semibold text-xl mb-4 mx-6 md:mx-0 md:-mt-10 lg:-mt-16  text-[#D7DE96]">
                     Contact Us
                   </h3>
-                  <p className=" flex items-start gap-5">
+                  <p className=" flex items-start gap-5 mx-6 md:mx-0">
                     <img src={Location} alt="Location" />
                     <span>
                       <a
@@ -122,14 +123,14 @@ const Footer = () => {
                       </a>
                     </span>
                   </p>
-                  <p className="mt-4 flex items-start gap-5">
+                  <p className="mt-4 flex items-start gap-5 mx-6 md:mx-0">
                     <img src={Call} alt="call" />
                     <span>
                       <span className="font-bold">Phone:</span> 079-4000-1300,
                       +91-9898577877
                     </span>
                   </p>
-                  <p className="mt-4 flex items-start gap-5 w-full">
+                  <p className="mt-4 flex items-start gap-5 w-full mx-6 md:mx-0">
                     <img src={Email} alt="Email" className="" />
                     <span className="font-bold">
                       <a

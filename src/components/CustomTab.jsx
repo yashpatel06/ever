@@ -15,13 +15,11 @@ const CustomTab = ({ tabs }) => {
         {tabs?.map((tab, index) => (
           <div
             key={index}
-            className={`border-2 border-black cursor-pointer ${
-              index === activeTab ? "active" : ""
-            }`}
+            className={` cursor-pointer ${index === activeTab ? "active" : ""}`}
             onClick={() => handleTabClick(index)}
           >
             <p
-              className={`text-[20px] font-semibold relative ${
+              className={`text-[20px] font-semibold relative  ${
                 index === activeTab
                   ? "text-[#325131] bg-[#D7DE96] px-4 py-1 rounded-t-md"
                   : " px-4 py-1 rounded-t-md "

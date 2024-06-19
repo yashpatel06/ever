@@ -1,16 +1,17 @@
 import CustomTab from "../components/CustomTab";
 import ProjectCard from "../components/ProjectCard";
 import Pro1 from "../assets/pro1.jpg";
-import Pro2 from "../assets/pro2.png";
+// import Pro2 from "../assets/pro2.png";
 
 const tabs = [
   {
-    title: "Residential",
+    title: "Projects",
+    nav: "/project-detail",
     content: (
       <div className="flex flex-col items-center md:flex-row flex-wrap w-full justify-center gap-10">
-        <ProjectCard ProjectImage={Pro1} />
-        <ProjectCard ProjectImage={Pro1} />
-        <ProjectCard ProjectImage={Pro1} />
+        <ProjectCard ProjectImage={Pro1} navi={"/project-detail"} />
+        <ProjectCard ProjectImage={Pro1} navi={"/project-detail"} />
+        {/* <ProjectCard ProjectImage={Pro1} /> */}
       </div>
     ),
   },
@@ -29,8 +30,8 @@ const tabs = [
 
 const Projects = () => {
   return (
-    <div className="">
-      <h1 className=" text-center text-[45px] font-semibold">Projects</h1>
+    <div className="mt-10">
+      {/* <h1 className=" text-center text-[45px] font-semibold">Projects</h1> */}
       <div>
         <CustomTab tabs={tabs} />
       </div>

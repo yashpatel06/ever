@@ -27,16 +27,14 @@ const OfferLand = () => {
         name: "",
         email: "",
         googleMapLink: "",
-        phoneCode: {
-          label: "",
-          code: "",
-          phone: "",
-        },
+        label: "",
+        code: "",
+        phone: "",
+        phoneNo: "",
         landZone: "",
         fSI: "",
         landSize: "",
         moreInformation: "",
-        phone: "",
         youAre: "",
         proposeLandType: "",
         isAgri: "",
@@ -58,10 +56,10 @@ const OfferLand = () => {
         document.body.appendChild(form);
         emailjs
           .sendForm(
-            "service_b82sbzf",
-            "template_dmqsb6l",
+            "service_e12xe2r",
+            "template_x8mc51e",
             form,
-            "Y4GJZaIiIA2Jw2efq"
+            "aAcs85ETEtw5SQ4yM"
           )
           .then(
             () => {
@@ -160,18 +158,18 @@ const OfferLand = () => {
                           name="phoneCode"
                           onChange={(e, newvalue) => {
                             console.log(newvalue, "setFieldValue");
-                            setFieldValue("phoneCode.phone", newvalue?.phone);
-                            setFieldValue("phoneCode.label", newvalue?.label);
-                            setFieldValue("phoneCode.code", newvalue?.code);
+                            setFieldValue("phone", newvalue?.phone);
+                            setFieldValue("label", newvalue?.label);
+                            setFieldValue("code", newvalue?.code);
                           }}
-                          value={values?.phoneCode?.phone}
+                          value={values?.phone}
                           id="country-select-demo"
                           // sx={{ width: 300 }}
                           options={countries}
                           autoHighlight
                           getOptionLabel={() =>
-                            values?.phoneCode?.code &&
-                            `${values?.phoneCode?.phone}  (${values?.phoneCode?.code}) ${values?.phoneCode?.label}`
+                            values?.code &&
+                            `${values?.phone}  (${values?.code}) ${values?.label}`
                           }
                           renderOption={(props, option) => (
                             <Box
@@ -204,7 +202,7 @@ const OfferLand = () => {
                           type="text"
                           label="Contact No."
                           name="phone"
-                          value={values?.phone}
+                          value={values?.phoneNo}
                           onChange={handleChange}
                           className="p-3 border-0 rounded-md md:w-full bg-white"
                           sx={{

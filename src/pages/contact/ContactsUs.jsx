@@ -33,10 +33,10 @@ const ContactUs = () => {
       document.body.appendChild(form);
       emailjs
         .sendForm(
-          "service_b82sbzf",
-          "template_l18nt5i",
+          "service_e12xe2r",
+          "template_k5e2ysg",
           form,
-          "Y4GJZaIiIA2Jw2efq"
+          "aAcs85ETEtw5SQ4yM"
         )
         .then(
           () => {

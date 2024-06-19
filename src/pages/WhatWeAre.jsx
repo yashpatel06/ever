@@ -4,10 +4,12 @@ import { Link } from "react-router-dom";
 const WhatWeAre = () => {
   return (
     <>
-      <div className="text-black flex flex-col md:flex-row justify-center  md:justify-evenly m-10">
+      <div className="text-black flex flex-col md:flex-row gap-10 justify-center md:justify-evenly my-10 mx-4 sm:mx-10">
         <div>
-          <h2 className="text-center text-[45px] font-semibold">What We Do</h2>
-          <ul className="text-[18px] font-medium">
+          <h2 className="text-center sm:text-left text-[28px] md:text-[30px] font-semibold">
+            What We Do
+          </h2>
+          <ul className="flex flex-col mt-4 items-start text-[18px] font-medium">
             <li>Apartments</li>
             <li>Retail</li>
             <li>Offices</li>
@@ -17,8 +19,10 @@ const WhatWeAre = () => {
           </ul>
         </div>
         <div>
-          <h1 className="text-center text-[45px] font-semibold">What We Are</h1>
-          <ul className="text-[18px] font-medium">
+          <h1 className="text-center sm:text-left text-[28px] md:text-[30px] font-semibold">
+            What We Are
+          </h1>
+          <ul className="text-[18px] mt-4 font-medium">
             {" "}
             <li className="min-w-[200px]">
               <Link to="/about-evermark" className="text-black no-underline">
@@ -114,11 +118,11 @@ const WhatWeAre = () => {
           </ul>
         </div>
       </div>
-      <div className="text-black text-center m-10">
-        <h1 className="text-center text-[45px] font-semibold">
+      <div className="text-black text-center  my-10 mx-4 sm:mx-10">
+        <h1 className="text-center sm:text-left md:text-center text-[28px] md:text-[30px] font-semibold">
           Connect With Us
         </h1>
-        <ul className="flex flex-col md:flex-row md:flex-wrap w-full md:justify-evenly text-[18px] font-medium">
+        <ul className="flex flex-col mt-4 md:flex-row md:flex-wrap w-full md:justify-evenly text-[18px] font-medium">
           <li>
             <Link to="/offer-land" className="text-black no-underline">
               <span className="flex relative group w-fit ">

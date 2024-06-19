@@ -15,25 +15,55 @@ import Footer from "../../components/Footer";
 import ScrollToTop from "../../hook/ScrollTop";
 import { countries } from "../../utils/CountryArray";
 import { Textarea } from "@mui/joy";
+import emailjs from "@emailjs/browser";
 
 const ShareFeedback = () => {
-  const { values, handleChange, handleSubmit, setFieldValue } = useFormik({
-    initialValues: {
-      name: "",
-      email: "",
-      phone: "",
-      feedBackType: "",
-      phoneCode: {
+  const { values, handleChange, handleSubmit, setFieldValue, resetForm } =
+    useFormik({
+      initialValues: {
+        name: "",
+        email: "",
+        phoneNo: "",
+        feedBackType: "",
         label: "",
         code: "",
         phone: "",
+        comment: "",
       },
-      comment: "",
-    },
-    onSubmit: (value) => {
-      console.log(value, "CONTACTUS");
-    },
-  });
+      onSubmit: (value) => {
+        console.log(value, "CONTACTUS");
+        const form = document.createElement("form");
+
+        // Append form fields with values from Formik
+        Object.keys(values).forEach((key) => {
+          const input = document.createElement("input");
+          input.type = "hidden";
+          input.name = key;
+          input.value = values[key];
+          form.appendChild(input);
+        });
+
+        // Append the form to the document body
+        document.body.appendChild(form);
+        emailjs
+          .sendForm(
+            "service_za5xega",
+            "template_t02hqzb",
+            form,
+            "I0sNyhLYfRNQI3NGn"
+          )
+          .then(
+            () => {
+              console.log("SUCCESS!");
+              resetForm();
+            },
+            (error) => {
+              console.log("FAILED...", error.text);
+              resetForm();
+            }
+          );
+      },
+    });
 
   return (
     <>
@@ -91,23 +121,23 @@ const ShareFeedback = () => {
                           name="phoneCode"
                           onChange={(e, newvalue) => {
                             console.log(newvalue, "setFieldValue");
-                            setFieldValue("phoneCode.phone", newvalue?.phone);
-                            setFieldValue("phoneCode.label", newvalue?.label);
-                            setFieldValue("phoneCode.code", newvalue?.code);
+                            setFieldValue("phone", newvalue?.phone);
+                            setFieldValue("label", newvalue?.label);
+                            setFieldValue("code", newvalue?.code);
                           }}
-                          value={values?.phoneCode?.phone}
+                          value={values?.phone}
                           id="country-select-demo"
-                          // sx={{ width: 300 }}
+                          sx={{ maxWidth: 300 }}
                           options={countries}
                           autoHighlight
                           getOptionLabel={() =>
-                            values?.phoneCode?.code &&
-                            `${values?.phoneCode?.phone}  (${values?.phoneCode?.code}) ${values?.phoneCode?.label}`
+                            values?.code &&
+                            `${values?.phone}  (${values?.code}) ${values?.label}`
                           }
                           renderOption={(props, option) => (
                             <Box
                               component="li"
-                              sx={{ "& > img": { mr: 2, flexShrink: 0 } }}
+                              sx={{ "& > img": { mr: 2 } }}
                               {...props}
                             >
                               <img
@@ -134,8 +164,8 @@ const ShareFeedback = () => {
                         <TextField
                           type="text"
                           label="Contact No."
-                          name="phone"
-                          value={values?.phone}
+                          name="phoneNo"
+                          value={values?.phoneNo}
                           onChange={handleChange}
                           className="p-3 border-0 rounded-md md:w-full bg-white"
                           sx={{

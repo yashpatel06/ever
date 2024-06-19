@@ -11,6 +11,7 @@ import OfferLand from "./pages/offerLand/OfferLand";
 import ChannelPartner from "./pages/become Partner/ChannelPartner";
 import ShareFeedback from "./pages/share Feedback/ShareFeedback";
 import ContactUsConnect from "./pages/contactUs/ContactUsConnect";
+import ProjectDetails from "./pages/ProjectDetails/ProjectDetails";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" element={<DefaultLayout />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/project-detail" element={<ProjectDetails />} />
         <Route path="/about-evermark" element={<AboutEverMark />} />
         <Route path="/mission-vision" element={<MissionVission />} />
         <Route path="/our-team" element={<OurTeam />} />

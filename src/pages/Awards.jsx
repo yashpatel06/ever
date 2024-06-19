@@ -11,8 +11,10 @@ import ReactPlayer from "react-player";
 const Awards = () => {
   return (
     <div className="container my-20 mb-52">
-      <h1 className="text-[45px] text-center font-semibold">Walk Through</h1>
-      <div className="flex justify-center">
+      <h1 className="text-[28px] md:text-[30px] text-center font-semibold">
+        Walk Through
+      </h1>
+      <div className="flex justify-center mt-10">
         <ReactPlayer url={"https://www.youtube.com/watch?v=y1DP1RcQNE0&t=1s"} />
       </div>
       {/* <div className="flex flex-col gap-10 item-center w-full">
