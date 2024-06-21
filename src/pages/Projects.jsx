@@ -6,11 +6,24 @@ import Pro1 from "../assets/pro1.jpg";
 const tabs = [
   {
     title: "Projects",
-    nav: "/project-detail",
     content: (
       <div className="flex flex-col items-center md:flex-row flex-wrap w-full justify-center gap-10">
-        <ProjectCard ProjectImage={Pro1} navi={"/project-detail"} />
-        <ProjectCard ProjectImage={Pro1} navi={"/project-detail"} />
+        <ProjectCard
+          ProjectImage={Pro1}
+          navi={"/project-detail"}
+          title={"Evermark 445"}
+          desc={"4bhk luxurious Living"}
+          flatLocation="https://maps.app.goo.gl/oEq76QYG96uBUKEW7"
+          address="Vavol, Gandhinagar, Gujarat"
+        />
+        <ProjectCard
+          ProjectImage={Pro1}
+          navi={"/project-detail"}
+          title={"Evermark Epic"}
+          desc={"3bhk luxurious Living"}
+          flatLocation="https://maps.app.goo.gl/U8Qc5LLRbDkezYDx6"
+          address="Gandhinagar, Gujarat"
+        />
         {/* <ProjectCard ProjectImage={Pro1} /> */}
       </div>
     ),

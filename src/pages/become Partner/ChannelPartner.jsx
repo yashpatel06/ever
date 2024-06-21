@@ -75,7 +75,7 @@ const ChannelPartner = () => {
   return (
     <>
       <div className="relative bg-white text-white">
-        <img
+        {/* <img
           src={Banner}
           alt="Background image of skyscrapers"
           className="absolute inset-0 overflow-clip  w-full h-full "
@@ -83,9 +83,9 @@ const ChannelPartner = () => {
           // style={{
           //   left: "50%",
           // }}
-        />
+        /> */}
         <div className="relative mx-auto px-6 py-1 xl:ml-10">
-          <Header />
+          <Header color={"black"} />
 
           <div className="bg-[#325131] shadow-md rounded-lg overflow-hidden my-10">
             <div className="p-8">

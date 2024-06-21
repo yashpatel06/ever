@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
-import Logo2x from "../assets/logo2x.png";
+// import Logo2x from "../assets/logo2x.png";
+import Logo2x from "../assets/logoem.png";
 import Email from "../assets/email.png";
 import Location from "../assets/Black.png";
 import Call from "../assets/Vector.png";
@@ -16,7 +17,7 @@ const Footer = () => {
   return (
     <>
       <div className="relative">
-        {pathname == "/" && (
+        {/* {pathname == "/" && (
           <div className="mx-2 lg:w-full -top-28 bottom-0 right-0 left-0 p-6 bg-white rounded-md shadow-2xl lg:max-w-[800px] flex flex-col justify-center absolute lg:mx-auto items-center h-[200px]">
             <h2 className="text-[30px] lg:text-[40px] font-semibold text-center text-zinc-800 mb-6">
               Subscribe Our Newsletter
@@ -34,15 +35,16 @@ const Footer = () => {
               </button>
             </div>
           </div>
-        )}
+        )} */}
 
         <div
-          className={`bg-[#325131] h-full ${pathname == "/" ? "pt-32" : ""} `}
+          className="bg-[#325131] h-full pt-10"
+          // className={`bg-[#325131] h-full ${pathname == "/" ? "pt-32" : ""} `}
         >
           <div className="flex flex-wrap items-center">
             <div className="container  flex flex-col xl:flex-row items-center xl:flex justify-between">
-              <div className="mt-14">
-                <img src={Logo2x} alt="Logo2x" />
+              <div className="">
+                <img src={Logo2x} alt="Logo2x" className="rounded-lg mx-10" />
               </div>
               <div className="flex flex-col md:flex-row justify-center lg:gap-20 w-full items-center xl:flex gap-8 text-white lg:mt-10">
                 <div className="flex mt-10 lg:gap-20 lg:mt-0">

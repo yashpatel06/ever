@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import Banner from "../assets/evermarkbg.jpg";
+import Banner from "../assets/nightView.jpg";
 import EverPDF from "../assets/everpdf.pdf";
 import Header from "../components/Header";
 
@@ -29,12 +29,12 @@ const LandingPage = () => {
           <div className="flex">
             <div className="flex justify-center  gap-3 items-center absolute">
               <button className="bg-[#325131] cursor-pointer text-white px-4 py-3 border-none rounded-lg">
-                <a
-                  href="https://maps.app.goo.gl/njSkT9zFM5LsV7Vw9"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-current no-underline"
-                >
+                  <a
+                    href="https://maps.app.goo.gl/njSkT9zFM5LsV7Vw9"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-current no-underline"
+                  >
                   Get Location
                 </a>
               </button>
