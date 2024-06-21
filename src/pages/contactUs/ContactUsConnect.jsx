@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import Footer from "../../components/Footer";
-import Banner from "../../assets/evermarkbg.jpg";
+// import Banner from "../../assets/evermarkbg.jpg";
 import ScrollToTop from "../../hook/ScrollTop";
 import Header from "../../components/Header";
 

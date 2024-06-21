@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import Header from "../../components/Header";
-import Banner from "../../assets/evermarkbg.jpg";
+// import Banner from "../../assets/evermarkbg.jpg";
 import {
   Autocomplete,
   Box,

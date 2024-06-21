@@ -1,5 +1,5 @@
 import { useFormik } from "formik";
-import Banner from "../../assets/evermarkbg.jpg";
+// import Banner from "../../assets/evermarkbg.jpg";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import ScrollToTop from "../../hook/ScrollTop";
