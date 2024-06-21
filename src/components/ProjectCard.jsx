@@ -50,7 +50,10 @@ const ProjectCard = ({
         </a>
       </p>
       <div className="flex items-center justify-between mt-1">
-        <button className="bg-[#325131] text-white px-4 py-3 rounded-md border-none cursor-pointer max-h-[35px] flex items-center">
+        <button
+          onClick={() => navigate("/contact-us")}
+          className="bg-[#325131] text-white px-4 py-3 rounded-md border-none cursor-pointer max-h-[35px] flex items-center"
+        >
           Book Now
         </button>
         {/* <div className="flex gap-1">

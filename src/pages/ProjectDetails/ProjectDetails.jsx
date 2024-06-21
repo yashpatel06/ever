@@ -28,16 +28,24 @@ const details = [
     desc: "4bhk luxurious Living",
     location: "https://maps.app.goo.gl/oEq76QYG96uBUKEW7",
     pdf: EverPDF445,
+    address:
+      "EVERMARK 445, Opp Shahjanand S+, nr. Siddharth's School, Vavol, Gandhinagar, Gujarat 382016",
+    mapLink:
+      "https://maps.google.com/maps?q=EVERMARK+445%2C+Opp+Shahjanand+S%2B%2C+nr.+Siddharth%27s+School%2C+Vavol%2C+Gandhinagar%2C+Gujarat+382016&t=&z=13&ie=UTF8&iwloc=&output=embed",
   },
   {
     title: "Evermark Epic",
     desc: "3bhk luxurious Living",
     location: "https://maps.app.goo.gl/U8Qc5LLRbDkezYDx6",
     pdf: EpicPdf,
+    address: "6JP9+FMG, Gandhinagar, Gujarat 382016",
+    mapLink:
+      "https://maps.google.com/maps?q=6JP9%2BFMG%2C+Gandhinagar%2C+Gujarat+382016&t=&z=13&ie=UTF8&iwloc=&output=embed",
   },
 ];
 
 const ProjectDetails = () => {
+  const swiperRef = useRef();
   const videoRef = useRef(null);
   const navigate = useNavigate();
   const { state } = useLocation();
@@ -92,91 +100,97 @@ const ProjectDetails = () => {
         <div className="relative mx-auto px-6 py-1 xl:ml-10">
           <Header color={"black"} />
           <div className="text-black mb-10">
-            <div className="relative flex justify-center my-10">
-              <img
-                src={Library}
-                alt="Banner"
-                className="w-full max-w-[90%] max-h-[400px] object-cover rounded-md"
-              />
-              <div className="absolute bottom-[40px] flex justify-between">
-                <div>
-                  <h1 className="text-white text-2xl">
-                    {projectDetails?.title}
-                  </h1>
-                  <p className="text-white text-xl">{projectDetails?.desc}</p>
+            <div className=" flex justify-center my-10">
+              <div className="w-full max-w-[90%] max-h-[400px] object-cover rounded-md overflow-hidden relative">
+                <img src={Library} alt="Banner" className="w-full h-full" />
+                <div className="absolute bottom-[10px] left-0  right-0 flex flex-col sm:flex-row px-5">
+                  <div className="flex-1 flex flex-col items-start">
+                    <h1 className="text-white text-3xl md:text-4xl lg:text-6xl font-semibold shadow-md">
+                      {projectDetails?.title}
+                    </h1>
+                    <p className="text-white md:text-2xl lg:text-3xl font-medium shadow-md">
+                      {projectDetails?.desc}
+                    </p>
+                  </div>
+                  <div className="flex justify-end sm:justify-between gap-1">
+                    <div
+                      className="mail bg-[#353331] rounded-lg px-3  md:px-0 lg:px-2  cursor-pointer md: lg:w-full flex items-center justify-center bg-opacity-80"
+                      onClick={() => navigate("/contact-us")}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="48px"
+                        viewBox="0 -960 960 960"
+                        width="48px"
+                        fill="#e8eaed"
+                        className="w-4 sm:w-8 md:w-20"
+                      >
+                        <path d="M140-160q-24 0-42-18t-18-42v-520q0-24 18-42t42-18h680q24 0 42 18t18 42v520q0 24-18 42t-42 18H140Zm340-302L140-685v465h680v-465L480-462Zm0-60 336-218H145l335 218ZM140-685v-55 520-465Z" />
+                      </svg>
+                    </div>
+                    <div className="pdf bg-[#353331] rounded-lg px-3  md:px-0 lg:px-2  cursor-pointer flex items-center justify-center bg-opacity-80">
+                      <a
+                        className="text-current no-underline"
+                        href={projectDetails?.pdf}
+                        download={projectDetails?.pdf}
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          height="48px"
+                          viewBox="0 -960 960 960"
+                          width="48px"
+                          fill="#e8eaed"
+                          className="w-4 sm:w-8 md:w-20"
+                        >
+                          <path d="M480-313 287-506l43-43 120 120v-371h60v371l120-120 43 43-193 193ZM220-160q-24 0-42-18t-18-42v-143h60v143h520v-143h60v143q0 24-18 42t-42 18H220Z" />
+                        </svg>
+                      </a>
+                    </div>
+                    <div
+                      className="location bg-[#353331] rounded-lg px-3  md:px-0 lg:px-2  cursor-pointer flex items-center justify-center bg-opacity-80"
+                      // onClick={() => navigate("/contact-us")}
+                    >
+                      <a
+                        href={projectDetails?.location}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-current no-underline"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          height="48px"
+                          viewBox="0 -960 960 960"
+                          width="48px"
+                          fill="#e8eaed"
+                          className="w-4 sm:w-8 md:w-20"
+                        >
+                          <path d="M480-276q109-83 164.5-169.5T700-600q0-97-61.5-158.5T480-820q-97 0-158.5 61.5T260-600q0 67 55.5 153.5T480-276Zm0 76Q338-303 269-406t-69-194q0-123 78.5-201.5T480-880q123 0 201.5 78.5T760-600q0 91-69 194T480-200Zm-1-320q34 0 57.5-23.5T560-600q0-33-23.5-56.5T479-680q-33 0-56 23.5T400-600q0 33 23 56.5t56 23.5ZM200-80v-60h560v60H200Zm280-520Z" />
+                        </svg>
+                      </a>
+                    </div>
+                    <div
+                      className="gallery bg-[#353331] rounded-lg px-3 sm:p-0 sm:px-3  md:px-0 lg:px-2 md:py-2 cursor-pointer flex items-center justify-center bg-opacity-80"
+                      // onClick={() => navigate("/contact-us")}
+                      role="button"
+                      onClick={() => {
+                        swiperRef.current.scrollIntoView({
+                          behavior: "smooth",
+                        });
+                      }}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="48px"
+                        viewBox="0 -960 960 960"
+                        width="48px"
+                        fill="#e8eaed"
+                        className="w-4 sm:w-8 md:w-20"
+                      >
+                        <path d="M100-200q-24.75 0-42.37-17.63Q40-235.25 40-260v-440q0-24.75 17.63-42.38Q75.25-760 100-760h440q24.75 0 42.38 17.62Q600-724.75 600-700v440q0 24.75-17.62 42.37Q564.75-200 540-200H100Zm620-320q-17 0-28.5-11.5T680-560v-160q0-17 11.5-28.5T720-760h160q17 0 28.5 11.5T920-720v160q0 17-11.5 28.5T880-520H720Zm20-60h120v-120H740v120ZM100-260h440v-440H100v440Zm60-100h320L375-500l-75 100-55-73-85 113Zm560 160q-17 0-28.5-11.5T680-240v-160q0-17 11.5-28.5T720-440h160q17 0 28.5 11.5T920-400v160q0 17-11.5 28.5T880-200H720Zm20-60h120v-120H740v120Zm-640 0v-440 440Zm640-320v-120 120Zm0 320v-120 120Z" />
+                      </svg>
+                    </div>
+                  </div>
                 </div>
-                {/* <div className="flex justify-between gap-1">
-                  <div
-                    className="mail bg-[#353331] rounded-lg  px-2 md:py-2 cursor-pointer"
-                    onClick={() => navigate("/contact-us")}
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="48px"
-                      viewBox="0 -960 960 960"
-                      width="48px"
-                      fill="#e8eaed"
-                      className="w-8 md:w-20"
-                    >
-                      <path d="M140-160q-24 0-42-18t-18-42v-520q0-24 18-42t42-18h680q24 0 42 18t18 42v520q0 24-18 42t-42 18H140Zm340-302L140-685v465h680v-465L480-462Zm0-60 336-218H145l335 218ZM140-685v-55 520-465Z" />
-                    </svg>
-                  </div>
-                  <div className="pdf bg-[#353331] rounded-lg  px-2 md:py-2 cursor-pointer">
-                    <a
-                      className="text-current no-underline"
-                      href={projectDetails?.pdf}
-                      download={projectDetails?.pdf}
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="48px"
-                        viewBox="0 -960 960 960"
-                        width="48px"
-                        fill="#e8eaed"
-                        className="w-8 md:w-20"
-                      >
-                        <path d="M480-313 287-506l43-43 120 120v-371h60v371l120-120 43 43-193 193ZM220-160q-24 0-42-18t-18-42v-143h60v143h520v-143h60v143q0 24-18 42t-42 18H220Z" />
-                      </svg>
-                    </a>
-                  </div>
-                  <div
-                    className="location bg-[#353331] rounded-lg  px-2 md:py-2 cursor-pointer"
-                    // onClick={() => navigate("/contact-us")}
-                  >
-                    <a
-                      href={projectDetails?.location}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-current no-underline"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="48px"
-                        viewBox="0 -960 960 960"
-                        width="48px"
-                        fill="#e8eaed"
-                        className="w-8 md:w-20"
-                      >
-                        <path d="M480-276q109-83 164.5-169.5T700-600q0-97-61.5-158.5T480-820q-97 0-158.5 61.5T260-600q0 67 55.5 153.5T480-276Zm0 76Q338-303 269-406t-69-194q0-123 78.5-201.5T480-880q123 0 201.5 78.5T760-600q0 91-69 194T480-200Zm-1-320q34 0 57.5-23.5T560-600q0-33-23.5-56.5T479-680q-33 0-56 23.5T400-600q0 33 23 56.5t56 23.5ZM200-80v-60h560v60H200Zm280-520Z" />
-                      </svg>
-                    </a>
-                  </div>
-                  <div
-                    className="gallery bg-[#353331] rounded-lg  px-2 md:py-2 cursor-pointer"
-                    // onClick={() => navigate("/contact-us")}
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="48px"
-                      viewBox="0 -960 960 960"
-                      width="48px"
-                      fill="#e8eaed"
-                      className="w-8 md:w-20"
-                    >
-                      <path d="M100-200q-24.75 0-42.37-17.63Q40-235.25 40-260v-440q0-24.75 17.63-42.38Q75.25-760 100-760h440q24.75 0 42.38 17.62Q600-724.75 600-700v440q0 24.75-17.62 42.37Q564.75-200 540-200H100Zm620-320q-17 0-28.5-11.5T680-560v-160q0-17 11.5-28.5T720-760h160q17 0 28.5 11.5T920-720v160q0 17-11.5 28.5T880-520H720Zm20-60h120v-120H740v120ZM100-260h440v-440H100v440Zm60-100h320L375-500l-75 100-55-73-85 113Zm560 160q-17 0-28.5-11.5T680-240v-160q0-17 11.5-28.5T720-440h160q17 0 28.5 11.5T920-400v160q0 17-11.5 28.5T880-200H720Zm20-60h120v-120H740v120Zm-640 0v-440 440Zm640-320v-120 120Zm0 320v-120 120Z" />
-                    </svg>
-                  </div>
-                </div> */}
               </div>
             </div>
             <div className="text-[20px] mx-4 md:mx-16">
@@ -256,7 +270,7 @@ const ProjectDetails = () => {
                 )}
               </div>
             </div>
-            <div className="mx-4 md:mx-16 mb-10">
+            <div className="mx-4 md:mx-16 mb-10" ref={swiperRef}>
               <div className="flex justify-between w-full">
                 <h1 className="text-[25px] text-center md:text-left md:text-[36px]">
                   Gallery
@@ -321,14 +335,13 @@ const ProjectDetails = () => {
                 <div className="gmap_canvas flex-1 overflow-hidden sm:overscroll-none justify-center w-full">
                   <iframe
                     className="w-full md:h-[400px]"
-                    src="https://maps.google.com/maps?q=EVERMARK+445%2C+Opp+Shahjanand+S%2B%2C+nr.+Siddharth%27s+School%2C+Vavol%2C+Gandhinagar%2C+Gujarat+382016&t=&z=8&ie=UTF8&iwloc=&output=embed"
+                    src={projectDetails?.mapLink}
                   />
                 </div>
                 <div className="flex-1 text-left text-[18px] mt-5 lg:mt-0">
                   <h1 className="font-thin">Location</h1>
                   <p className="text-[20px] lg:text-[30px] max-w-[400px] mt-3 lg:mt-0">
-                    EVERMARK 445, Opp Shahjanand S+, nr. Siddharth's School,
-                    Vavol, Gandhinagar, Gujarat 382016
+                    {projectDetails?.address}
                   </p>
                 </div>
               </div>
