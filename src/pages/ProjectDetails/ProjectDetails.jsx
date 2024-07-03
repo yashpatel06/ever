@@ -5,6 +5,8 @@ import Footer from "../../components/Footer";
 import ScrollToTop from "../../hook/ScrollTop";
 import Header from "../../components/Header";
 import Library from "../../assets/Library.jpg";
+import SideView from "../../assets/SideView.jpg";
+import BirdView from "../../assets/BirdView.jpg";
 import Toddler from "../../assets/Toddler.jpg";
 import C from "../../assets/C1.jpg";
 import Indoor from "../../assets/Indoor.jpg";
@@ -32,6 +34,7 @@ const details = [
       "EVERMARK 445, Opp Shahjanand S+, nr. Siddharth's School, Vavol, Gandhinagar, Gujarat 382016",
     mapLink:
       "https://maps.google.com/maps?q=EVERMARK+445%2C+Opp+Shahjanand+S%2B%2C+nr.+Siddharth%27s+School%2C+Vavol%2C+Gandhinagar%2C+Gujarat+382016&t=&z=13&ie=UTF8&iwloc=&output=embed",
+    virtualTour: "https://portfolio.virtueaze.com/evermark_4_bhk/",
   },
   {
     title: "Evermark Epic",
@@ -41,6 +44,7 @@ const details = [
     address: "6JP9+FMG, Gandhinagar, Gujarat 382016",
     mapLink:
       "https://maps.google.com/maps?q=6JP9%2BFMG%2C+Gandhinagar%2C+Gujarat+382016&t=&z=13&ie=UTF8&iwloc=&output=embed",
+    virtualTour: "https://portfolio.virtueaze.com/evermark3bhk/",
   },
 ];
 
@@ -102,8 +106,12 @@ const ProjectDetails = () => {
           <div className="text-black mb-10">
             <div className=" flex justify-center my-10">
               <div className="w-full max-w-[90%] max-h-[400px] object-cover rounded-md overflow-hidden relative">
-                <img src={Library} alt="Banner" className="w-full h-full" />
-                <div className="absolute bottom-[10px] left-0  right-0 flex flex-col sm:flex-row px-5">
+                <img
+                  src={topview}
+                  alt="Banner"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute bottom-[10px] left-0 right-0 flex flex-col sm:flex-row px-5">
                   <div className="flex-1 flex flex-col items-start">
                     <h1 className="text-white text-3xl md:text-4xl lg:text-6xl font-semibold shadow-md">
                       {projectDetails?.title}
@@ -276,7 +284,14 @@ const ProjectDetails = () => {
                   Gallery
                 </h1>
                 <button className="bg-[#325131] cursor-pointer text-white px-5  border-none rounded-lg">
-                  360 view
+                  <a
+                    href={projectDetails?.virtualTour}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-current no-underline"
+                  >
+                    360 Virtual Tour
+                  </a>
                 </button>
               </div>
               <Swiper

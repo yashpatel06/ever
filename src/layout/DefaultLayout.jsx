@@ -14,7 +14,7 @@ const DefaultLayout = () => {
       <Projects />
       <WhatWeAre />
       {/* <Customer /> */}
-      <OurMission />
+      {/* <OurMission /> */}
       <Awards />
       <Footer />
     </div>

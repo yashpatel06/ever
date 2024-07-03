@@ -11,7 +11,7 @@ const FounderDesk = () => {
         <div className="relative mx-auto px-6 py-1 xl:ml-10">
           <Header color={"black"} />
           <div className="text-black mb-10">
-            <h1 className=" text-center text-[#325131]">
+            <h1 className=" text-center text-[#325131] md:text-[30px]">
               Message from Founder’s Desk
             </h1>
             <div className="flex justify-center w-full my-10">
@@ -23,11 +23,11 @@ const FounderDesk = () => {
             </div>
             <div className=" flex justify-center">
               <div className="max-w-[90%]">
-                <p className="text-center font-medium">
+                <p className="text-center font-medium md:text-[18px]">
                   {" "}
                   “Creativity with quality is my aim.”
                 </p>
-                <p className="text-center font-medium">
+                <p className="text-center font-medium md:text-[18px]">
                   While developing any project, I always keep in mind that any
                   project is for my personal use. I strongly believe that “fast
                   is fine but accuracy is everything.” In each and every

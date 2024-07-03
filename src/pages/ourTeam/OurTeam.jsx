@@ -11,7 +11,9 @@ const OurTeam = () => {
         <div className="relative mx-auto px-6 py-1 xl:ml-10">
           <Header color={"black"} />
           <div className="text-black mb-10">
-            <h1 className=" text-center text-[#325131]">Our Team</h1>
+            <h1 className=" text-center text-[#325131] md:text-[30px]">
+              Our Team
+            </h1>
             <div className="flex justify-center w-full my-10">
               <img
                 src={Multipurpose}
@@ -20,7 +22,7 @@ const OurTeam = () => {
               />
             </div>
             <div className=" flex justify-center">
-              <p className="text-center font-medium max-w-[90%]">
+              <p className="text-center font-medium max-w-[90%] md:text-[18px]">
                 Ever Mark Team since its inception has worked to gift some of
                 the most prominent addresses of the city. The team immaculately
                 works towards developing contemporary design, with a classic

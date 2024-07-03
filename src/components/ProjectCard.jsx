@@ -29,16 +29,16 @@ const ProjectCard = ({
           className="max-w-[300px] rounded-md"
         />
       </div>
-      <div className="flex items-center">
+      {/* <div className="flex items-center">
         <img src={Balcony} alt="Balcony" />
         <img src={Bed} alt="Bed" />
         <img src={Bath} alt="Bath" />
-      </div>
-      <p className="text-[20px] font-semibold -mt-1">{title}</p>
-      <p className="-mt-1 text-[#37474F]">
+      </div> */}
+      <p className="text-[20px] font-semibold mt-2">{title}</p>
+      <p className="-mt-[2px] text-[#37474F]">
         <span className="text-[#325131] font-semibold ">{desc}</span>
       </p>
-      <p className="flex items-center gap-3 text-[#325131] -mt-1">
+      <p className="flex items-center gap-3 text-[#325131] -mt-[2px]">
         <img src={Location} alt="Location" />
         <a
           href={flatLocation}

@@ -16,10 +16,10 @@ const AboutUs = () => {
         <div className="relative mx-auto px-6 py-1 xl:ml-10">
           <Header color={"black"} />
           <div className="text-black mb-10">
-            <h1 className=" text-center text-[#325131] text-[28px] md:text-[30px]">
+            <h1 className=" text-center text-[#325131] text-[28px] md:text-[36px]">
               About Us
             </h1>
-            <p className="text-left mt-5 mx-5 md:mx-14">
+            <p className="text-left mt-5 mx-5 md:mx-16 md:text-[18px]">
               A Legacy Of Timeless Elegance Shivalik developers are on a quest
               to build a legacy of timeless elegance. Pioneering the skyline of
               the city already, they are steadily conquering the state of
@@ -35,7 +35,7 @@ const AboutUs = () => {
             <h1 className="text-center text-[#325131] text-[28px] md:text-[30px]">
               Evermark Group Team
             </h1>
-            <p className="text-left mt-5 mx-5 md:mx-10">
+            <p className="text-left mt-5 mx-5 md:mx-16 md:text-[18px]">
               Rightfully the people who make Shivalik! A closely knit family of
               technical engineers and quality auditors backed up by
               administrative staff personnel and marketing filet alongside our

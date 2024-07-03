@@ -54,7 +54,7 @@ const Footer = () => {
                     </h3>
                     <ul className="space-y-2 list-none ">
                       <li className="">
-                        <Link to={"#"} className="text-white no-underline  ">
+                        <Link to={"/"} className="text-white no-underline  ">
                           Home
                         </Link>
                       </li>
@@ -64,7 +64,10 @@ const Footer = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link to={""} className="text-white no-underline">
+                        <Link
+                          to={"/mission-vision"}
+                          className="text-white no-underline"
+                        >
                           Our Mission
                         </Link>
                       </li>
@@ -74,7 +77,10 @@ const Footer = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link to={""} className="text-white no-underline">
+                        <Link
+                          to={"/contact-us"}
+                          className="text-white no-underline"
+                        >
                           Contact Us
                         </Link>
                       </li>
@@ -128,8 +134,13 @@ const Footer = () => {
                   <p className="mt-4 flex items-start gap-5 mx-6 md:mx-0">
                     <img src={Call} alt="call" />
                     <span>
-                      <span className="font-bold">Phone:</span> 079-4000-1300,
-                      +91-9898577877
+                      <span className="font-bold">Phone:</span> 079-4000-1300{" "}
+                      <a
+                        href="https://api.whatsapp.com/send?phone=9898577877"
+                        target="_blank"
+                      >
+                        9898577877
+                      </a>
                     </span>
                   </p>
                   <p className="mt-4 flex items-start gap-5 w-full mx-6 md:mx-0">
@@ -172,7 +183,10 @@ const Footer = () => {
               {/* <a href="" target="_blank">
                 <img src={linkedin} alt="linkedin" className="w-6" />
               </a> */}
-              <a href="" target="_blank">
+              <a
+                href="https://api.whatsapp.com/send?phone=9898577877"
+                target="_blank"
+              >
                 <img src={whatsapp} alt="whatsapp" className="w-6" />
               </a>
             </div>

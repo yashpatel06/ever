@@ -13,7 +13,9 @@ const AboutEverMark = () => {
           <div className="relative mx-auto px-6 py-1 xl:ml-10">
             <Header color={"black"} />
             <div className="text-black mb-10">
-              <h1 className=" text-center text-[#325131]">About EVER MARK</h1>
+              <h1 className=" text-center text-[#325131] md:text-[30px]">
+                About EVER MARK
+              </h1>
               <div className="flex justify-center w-full my-10">
                 <img
                   src={TopView}
@@ -22,7 +24,7 @@ const AboutEverMark = () => {
                 />
               </div>
               <div className=" flex justify-center">
-                <p className="text-center font-medium max-w-[90%]">
+                <p className="text-center font-medium max-w-[90%] md:text-[18px]">
                   Ever Mark has made a successful foray in residential,
                   commercial and retail spaces with a strong foundation in
                   Gandhinagar. Work of Ever Mark well informed and the
