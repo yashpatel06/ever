@@ -474,7 +474,7 @@ const OfferLand = () => {
 
                   <div className="mb-4">
                     <p className="text-[16px]">
-                      Shivalik has built more than 75+ landmark projects since
+                      Evermark has built more than 75+ landmark projects since
                       1998 & having a presence in almost every area of Ahmedabad
                     </p>
                   </div>

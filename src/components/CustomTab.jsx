@@ -21,7 +21,7 @@ const CustomTab = ({ tabs }) => {
             <p
               className={`text-[20px] font-semibold relative  ${
                 index === activeTab
-                  ? "text-[#325131] bg-[#D7DE96] px-4 py-1 rounded-t-md"
+                  ? "text-[#325131] bg-[#D7DE96] px-4 py-1 mb-2 rounded-t-md"
                   : " px-4 py-1 rounded-t-md "
               }`}
             >

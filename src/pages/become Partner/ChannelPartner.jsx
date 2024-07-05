@@ -308,7 +308,7 @@ const ChannelPartner = () => {
 
                   <div className="mb-4">
                     <p className="text-[16px]">
-                      At Shivalik Group, we really value our relationship with
+                      At Evermark Group, we really value our relationship with
                       Channel Partners and want to build a strong, long-lasting
                       collaboration that benefits us both.
                     </p>

@@ -5,15 +5,18 @@ import Footer from "../../components/Footer";
 import ScrollToTop from "../../hook/ScrollTop";
 import Header from "../../components/Header";
 import Library from "../../assets/Library.jpg";
-import SideView from "../../assets/SideView.jpg";
-import BirdView from "../../assets/BirdView.jpg";
 import Toddler from "../../assets/Toddler.jpg";
 import C from "../../assets/C1.jpg";
 import Indoor from "../../assets/Indoor.jpg";
 import Terrace from "../../assets/Terrace.jpg";
 import playarea from "../../assets/playarea.jpg";
 import topview from "../../assets/topview.jpg";
-import nightView from "../../assets/nightView.jpg";
+import ArchitecturalView from "../../assets/ArchitecturalView.jpg";
+import RightCorner from "../../assets/RightCorner.jpg";
+import BirdView from "../../assets/BirdView.jpg";
+import BalconyView from "../../assets/BalconyView.jpg";
+import GardenView from "../../assets/GardenView.jpg";
+import NightView from "../../assets/NightView.jpg";
 import WalkThrough from "../../assets/walkthrough.mp4";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -26,6 +29,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 const details = [
   {
+    mainImage: topview,
     title: "Evermark 445",
     desc: "4bhk luxurious Living",
     location: "https://maps.app.goo.gl/oEq76QYG96uBUKEW7",
@@ -35,8 +39,10 @@ const details = [
     mapLink:
       "https://maps.google.com/maps?q=EVERMARK+445%2C+Opp+Shahjanand+S%2B%2C+nr.+Siddharth%27s+School%2C+Vavol%2C+Gandhinagar%2C+Gujarat+382016&t=&z=13&ie=UTF8&iwloc=&output=embed",
     virtualTour: "https://portfolio.virtueaze.com/evermark_4_bhk/",
+    projectImages: [topview, C, Library, Toddler, playarea, Terrace, Indoor],
   },
   {
+    mainImage: BalconyView,
     title: "Evermark Epic",
     desc: "3bhk luxurious Living",
     location: "https://maps.app.goo.gl/U8Qc5LLRbDkezYDx6",
@@ -45,6 +51,14 @@ const details = [
     mapLink:
       "https://maps.google.com/maps?q=6JP9%2BFMG%2C+Gandhinagar%2C+Gujarat+382016&t=&z=13&ie=UTF8&iwloc=&output=embed",
     virtualTour: "https://portfolio.virtueaze.com/evermark3bhk/",
+    projectImages: [
+      ArchitecturalView,
+      RightCorner,
+      BirdView,
+      BalconyView,
+      GardenView,
+      NightView,
+    ],
   },
 ];
 
@@ -82,16 +96,16 @@ const ProjectDetails = () => {
     }
   };
 
-  const sliderImage = [
-    nightView,
-    topview,
-    C,
-    Library,
-    Toddler,
-    playarea,
-    Terrace,
-    Indoor,
-  ];
+  // const sliderImage = [
+  //   nightView,
+  //   topview,
+  //   C,
+  //   Library,
+  //   Toddler,
+  //   playarea,
+  //   Terrace,
+  //   Indoor,
+  // ];
 
   const MapStyle = {
     width: "100%",
@@ -107,7 +121,7 @@ const ProjectDetails = () => {
             <div className=" flex justify-center my-10">
               <div className="w-full max-w-[90%] max-h-[400px] object-cover rounded-md overflow-hidden relative">
                 <img
-                  src={topview}
+                  src={projectDetails?.mainImage}
                   alt="Banner"
                   className="w-full h-full object-cover"
                 />
@@ -329,7 +343,7 @@ const ProjectDetails = () => {
                   },
                 }}
               >
-                {sliderImage.map((x, i) => {
+                {projectDetails.projectImages.map((x, i) => {
                   return (
                     <SwiperSlide key={i}>
                       <img

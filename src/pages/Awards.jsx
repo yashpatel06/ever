@@ -10,7 +10,7 @@ import ReactPlayer from "react-player";
 
 const Awards = () => {
   return (
-    <div className="container my-20 mb-52">
+    <div className="container my-20">
       <h1 className="text-[28px] md:text-[30px] text-center font-semibold">
         Walk Through
       </h1>

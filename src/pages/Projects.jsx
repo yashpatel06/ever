@@ -1,7 +1,7 @@
 import CustomTab from "../components/CustomTab";
 import ProjectCard from "../components/ProjectCard";
 import Pro1 from "../assets/pro1.jpg";
-// import Pro2 from "../assets/pro2.png";
+import RightCorner from "../assets/ArchitecturalView.jpg";
 
 const tabs = [
   {
@@ -17,7 +17,7 @@ const tabs = [
           address="Vavol, Gandhinagar, Gujarat"
         />
         <ProjectCard
-          ProjectImage={Pro1}
+          ProjectImage={RightCorner}
           navi={"/project-detail"}
           title={"Evermark Epic"}
           desc={"3bhk luxurious Living"}
