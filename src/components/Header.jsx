@@ -102,7 +102,7 @@ const Header = ({ color }) => {
               </svg>
             )}
             {menuOpen && (
-              <div className="flex flex-col absolute w-[150px] gap-1 right-0 top-10">
+              <div className="flex flex-col absolute w-[150px] gap-1 right-0 top-10 z-20">
                 <Link
                   to={"/about-us"}
                   className={`${

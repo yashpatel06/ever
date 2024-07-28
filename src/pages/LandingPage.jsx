@@ -9,7 +9,7 @@ const LandingPage = () => {
       <img
         src={Banner}
         alt="Background image of skyscrapers"
-        className="absolute inset-0 overflow-clip xl:w-1/2 h-full xl:left-[50%] w-full"
+        className="absolute inset-0 overflow-clip xl:w-1/2 h-full xl:left-[50%] w-full object-cover"
         // className="absolute inset-0 overflow-clip xl:w-1/2 h-full xl:left-[50%]"
         // style={{
         //   left: "50%",
