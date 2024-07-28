@@ -120,7 +120,7 @@ const Header = ({ color }) => {
                   onClick={() => navigate("/contact-us")}
                   className="bg-[#325131] text-white px-4 py-3 border-none rounded-lg"
                 >
-                  contact Us
+                  Contact Us
                 </button>
               </div>
             )}
